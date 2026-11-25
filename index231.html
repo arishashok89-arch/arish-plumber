@@ -1,0 +1,1069 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AquaFix Plumbing Services</title>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- AOS Animation -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --blue:#087ca7;
+    --dark:#073b4c;
+    --orange:#ff8c42;
+    --green:#38b000;
+    --light:#e9faff;
+}
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body {
+    font-family:'Poppins',sans-serif;
+    background:#f8fcff;
+    color:#243746;
+}
+
+.navbar {
+    background:#073b4c;
+    padding:17px 5%;
+}
+
+.navbar-brand {
+    font-size:27px;
+    font-weight:800;
+    color:white!important;
+}
+
+.navbar-brand span {
+    color:#ff9f45;
+}
+
+.nav-link {
+    color:white!important;
+    font-weight:500;
+    margin:0 8px;
+    cursor:pointer;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color:#ffb347!important;
+}
+
+.navbar-toggler {
+    background:white;
+}
+
+.page {
+    display:none;
+    min-height:75vh;
+}
+
+.page.active {
+    display:block;
+    animation:fadePage .5s ease;
+}
+
+@keyframes fadePage {
+    from {opacity:0;transform:translateY(12px);}
+    to {opacity:1;transform:translateY(0);}
+}
+
+.hero {
+    min-height:610px;
+    display:flex;
+    align-items:center;
+    background:
+    linear-gradient(90deg,rgba(3,36,57,.9),rgba(3,36,57,.3)),
+    url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2hkg9g5OF_tqerhge3VBHWZfBfMyajtN5hxhcocJkEQ&s=10');
+    background-position:center;
+    background-size:cover;
+    color:white;
+    padding:80px 8%;
+}
+
+.hero h1 {
+    font-size:55px;
+    font-weight:800;
+    max-width:700px;
+}
+
+.hero h1 span {
+    color:#ffad60;
+}
+
+.hero p {
+    max-width:600px;
+    font-size:17px;
+    line-height:1.9;
+    margin:20px 0;
+}
+
+.btn-main {
+    background:#ff8c42;
+    color:white;
+    padding:13px 28px;
+    border-radius:30px;
+    border:0;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn-main:hover {
+    background:#087ca7;
+    color:white;
+    transform:translateY(-3px);
+}
+
+.btn-outline {
+    border:2px solid white;
+    color:white;
+    padding:11px 25px;
+    border-radius:30px;
+    background:transparent;
+    margin-left:10px;
+}
+
+.section {
+    padding:75px 7%;
+}
+
+.section-title {
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.section-title h2 {
+    font-size:36px;
+    font-weight:800;
+    color:#073b4c;
+}
+
+.section-title span {
+    color:#ff8c42;
+}
+
+.section-title p {
+    color:#718096;
+}
+
+.feature-box {
+    padding:28px;
+    border-radius:20px;
+    background:white;
+    box-shadow:0 5px 25px rgba(0,0,0,.07);
+    height:100%;
+    transition:.3s;
+    border-bottom:4px solid #ff8c42;
+}
+
+.feature-box:hover {
+    transform:translateY(-9px);
+}
+
+.feature-icon {
+    font-size:43px;
+    margin-bottom:15px;
+}
+
+.service-card {
+    border:0;
+    overflow:hidden;
+    border-radius:20px;
+    height:100%;
+    box-shadow:0 5px 25px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.service-card:hover {
+    transform:translateY(-8px);
+}
+
+.service-card img {
+    height:230px;
+    width:100%;
+    object-fit:cover;
+}
+
+.service-card .card-body {
+    padding:24px;
+}
+
+.service-card h5 {
+    font-weight:700;
+    color:#073b4c;
+}
+
+.about-img {
+    width:100%;
+    height:430px;
+    object-fit:cover;
+    border-radius:50px 10px 50px 10px;
+}
+
+.circle-img {
+    width:100%;
+    height:260px;
+    object-fit:cover;
+    border-radius:50%;
+}
+
+.oval-img {
+    width:100%;
+    height:260px;
+    object-fit:cover;
+    border-radius:50% 50% 10px 10px;
+}
+
+.gallery-img {
+    width:100%;
+    height:260px;
+    object-fit:cover;
+    border-radius:20px 60px 20px 60px;
+    transition:.4s;
+}
+
+.gallery-img:hover {
+    transform:scale(1.04);
+}
+
+.round-img {
+    width:100%;
+    height:270px;
+    object-fit:cover;
+    border-radius:50%;
+}
+
+.stats {
+    background:#087ca7;
+    color:white;
+    padding:45px 10px;
+    text-align:center;
+    border-radius:20px;
+}
+
+.stats h2 {
+    font-size:40px;
+    font-weight:800;
+}
+
+.price-table {
+    border-radius:15px;
+    overflow:hidden;
+    background:white;
+    box-shadow:0 5px 20px rgba(0,0,0,.06);
+}
+
+.price-table th {
+    background:#073b4c;
+    color:white;
+    padding:17px;
+}
+
+.price-table td {
+    padding:15px;
+    vertical-align:middle;
+}
+
+.price {
+    color:#e76f00;
+    font-weight:700;
+}
+
+.video-box {
+    border-radius:20px;
+    overflow:hidden;
+    background:#073b4c;
+    padding:10px;
+}
+
+.video-box iframe {
+    width:100%;
+    height:270px;
+    border:0;
+    border-radius:15px;
+}
+
+.contact-box {
+    background:white;
+    padding:35px;
+    border-radius:20px;
+    box-shadow:0 5px 25px rgba(0,0,0,.08);
+}
+
+.form-control, .form-select {
+    padding:13px;
+    border-radius:10px;
+    margin-bottom:15px;
+}
+
+.map-container {
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 5px 20px rgba(0,0,0,.1);
+}
+
+.map-container iframe {
+    width:100%;
+    height:350px;
+    border:0;
+}
+
+footer {
+    background:#052c3a;
+    color:white;
+    padding:55px 7% 20px;
+}
+
+footer h4, footer h5 {
+    color:#ffad60;
+    margin-bottom:20px;
+}
+
+footer a {
+    color:#d7eaf1;
+    display:block;
+    text-decoration:none;
+    margin-bottom:10px;
+    cursor:pointer;
+}
+
+footer a:hover {
+    color:#ffad60;
+}
+
+footer p {
+    color:#d7eaf1;
+    line-height:1.9;
+}
+
+.footer-bottom {
+    text-align:center;
+    border-top:1px solid #42616c;
+    padding-top:20px;
+    margin-top:30px;
+}
+
+.page-banner {
+    padding:75px 20px;
+    background:linear-gradient(120deg,#073b4c,#087ca7);
+    text-align:center;
+    color:white;
+}
+
+.page-banner h1 {
+    font-size:43px;
+    font-weight:800;
+}
+
+.badge-custom {
+    background:#e6f8ff;
+    color:#087ca7;
+    padding:8px 15px;
+    border-radius:30px;
+    font-weight:600;
+}
+
+@media(max-width:768px) {
+    .hero {
+        min-height:520px;
+        padding:65px 7%;
+    }
+
+    .hero h1 {
+        font-size:36px;
+    }
+
+    .hero p {
+        font-size:15px;
+    }
+
+    .section {
+        padding:50px 6%;
+    }
+
+    .section-title h2 {
+        font-size:28px;
+    }
+
+    .page-banner h1 {
+        font-size:32px;
+    }
+
+    .about-img {
+        height:300px;
+    }
+
+    footer {
+        text-align:center;
+    }
+
+    .btn-outline {
+        margin:10px 0 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+<div class="container-fluid">
+
+<a class="navbar-brand" href="#" onclick="showPage('home')">
+🔧 Aqua<span>Fix</span>
+</a>
+
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="menu">
+<ul class="navbar-nav ms-auto">
+
+<li class="nav-item"><a class="nav-link active" onclick="showPage('home',this)">Home</a></li>
+<li class="nav-item"><a class="nav-link" onclick="showPage('about',this)">About</a></li>
+<li class="nav-item"><a class="nav-link" onclick="showPage('services',this)">Services</a></li>
+<li class="nav-item"><a class="nav-link" onclick="showPage('gallery',this)">Gallery</a></li>
+<li class="nav-item"><a class="nav-link" onclick="showPage('media',this)">Design</a></li>
+<li class="nav-item"><a class="nav-link" onclick="showPage('pricing',this)">Pricing</a></li>
+<li class="nav-item"><a class="nav-link" onclick="showPage('contact',this)">Contact</a></li>
+
+</ul>
+</div>
+</div>
+</nav>
+
+<!-- HOME PAGE -->
+<div id="home" class="page active">
+
+<section class="hero">
+<div data-aos="fade-right">
+<span class="badge-custom">WELCOME TO AQUAFIX</span>
+<h1>Professional Plumbing <span>Solutions</span> For Every Home</h1>
+<p>
+From leaking taps to complete bathroom installations,
+AquaFix provides reliable, affordable and professional
+plumbing services for homes and businesses.
+</p>
+<button class="btn-main" onclick="showPage('services')">Explore Services →</button>
+<button class="btn-outline" onclick="showPage('contact')">Contact Us</button>
+</div>
+</section>
+
+<section class="section">
+<div class="section-title" data-aos="fade-up">
+<h2>Why Choose <span>AquaFix?</span></h2>
+<p>Quality plumbing services with professional care</p>
+</div>
+
+<div class="row g-4">
+<div class="col-md-3" data-aos="zoom-in">
+<div class="feature-box text-center">
+<div class="feature-icon">🛠️</div>
+<h5>Expert Plumbers</h5>
+<p>Skilled professionals for every plumbing requirement.</p>
+</div>
+</div>
+
+<div class="col-md-3" data-aos="zoom-in">
+<div class="feature-box text-center">
+<div class="feature-icon">💧</div>
+<h5>Leak Repairs</h5>
+<p>Fast solutions for leaking taps and water pipes.</p>
+</div>
+</div>
+
+<div class="col-md-3" data-aos="zoom-in">
+<div class="feature-box text-center">
+<div class="feature-icon">🏠</div>
+<h5>Home Services</h5>
+<p>Complete plumbing maintenance for your home.</p>
+</div>
+</div>
+
+<div class="col-md-3" data-aos="zoom-in">
+<div class="feature-box text-center">
+<div class="feature-icon">⭐</div>
+<h5>Quality Work</h5>
+<p>Reliable workmanship and quality materials.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section bg-light">
+<div class="section-title">
+<h2>Our Popular <span>Services</span></h2>
+</div>
+
+<div class="row g-4">
+
+<div class="col-md-4">
+<div class="card service-card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeYwuXk6o5uW6NtASLjWRodgiwX27gsjbArqH84KCWfQ&s=10">
+<div class="card-body">
+<h5>Bathroom Plumbing</h5>
+<p>Bathroom fittings, showers, taps and installation.</p>
+<button class="btn-main" onclick="showPage('services')">Read More</button>
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card service-card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdiouqzSiEVvB4xZeIkmyJ6RF9NxpiPnFj7Pu3PdRFGg&s=10">
+<div class="card-body">
+<h5>Pipe Installation</h5>
+<p>Professional water pipeline installation and repairs.</p>
+<button class="btn-main" onclick="showPage('services')">Read More</button>
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card service-card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSU_8qI2v1alLDpFmw07tHYnzIWbsPx2IC0Ps-2AiP_fA&s=10">
+<div class="card-body">
+<h5>Kitchen Plumbing</h5>
+<p>Kitchen sink, drainage and tap installation.</p>
+<button class="btn-main" onclick="showPage('services')">Read More</button>
+</div>
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="section">
+<div class="row g-3">
+<div class="col-md-4"><div class="stats"><h2>24/7</h2><p>Service Support</p></div></div>
+<div class="col-md-4"><div class="stats" style="background:#ff8c42"><h2>100%</h2><p>Quality Focus</p></div></div>
+<div class="col-md-4"><div class="stats" style="background:#38a169"><h2>Expert</h2><p>Plumbing Team</p></div></div>
+</div>
+</section>
+
+</div>
+
+<!-- ABOUT PAGE -->
+<div id="about" class="page">
+
+<div class="page-banner">
+<h1>About AquaFix</h1>
+<p>Building trust through quality plumbing services</p>
+</div>
+
+<section class="section">
+<div class="row align-items-center g-5">
+
+<div class="col-md-6" data-aos="fade-right">
+<img class="about-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO1AdCCqwUn3A1NHqOVYimoZZbIFfMZqRGjpnbGg_w6Q&s=10">
+</div>
+
+<div class="col-md-6" data-aos="fade-left">
+<span class="badge-custom">WHO WE ARE</span>
+<h2 class="mt-3 fw-bold">We Make Every Drop <span style="color:#ff8c42">Count!</span></h2>
+<p>
+AquaFix Plumbing Services is dedicated to providing
+professional plumbing solutions for residential and
+commercial properties.
+</p>
+<p>
+Our team focuses on quality installations, maintenance,
+water conservation and dependable repair services.
+We believe that every customer deserves clean water
+and a safe plumbing system.
+</p>
+
+<h5>Our Mission</h5>
+<p>To deliver affordable, dependable and sustainable plumbing solutions.</p>
+
+<h5>Our Vision</h5>
+<p>To become a trusted name in modern plumbing services.</p>
+
+<button class="btn-main" onclick="showPage('contact')">Work With Us</button>
+</div>
+</div>
+</section>
+
+<section class="section bg-light">
+<div class="section-title">
+<h2>Meet Our <span>Founder</span></h2>
+<p>Leadership behind AquaFix</p>
+</div>
+
+<div class="row justify-content-center">
+<div class="col-md-5 text-center" data-aos="zoom-in">
+<img class="circle-img" style="max-width:260px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkSvPQRoMvtW5PvE9CMWyIhc9SYp1TC8TsoJyQzKS6ig&s">
+<h3 class="mt-4 fw-bold">AquaFix Founder</h3>
+<p>Founder & Managing Director</p>
+<p>Dedicated to customer satisfaction, professional service and quality plumbing solutions.</p>
+</div>
+</div>
+</section>
+
+</div>
+
+<!-- SERVICES PAGE -->
+<div id="services" class="page">
+
+<div class="page-banner">
+<h1>Our Plumbing Services</h1>
+<p>Complete solutions for your home and business</p>
+</div>
+
+<section class="section">
+<div class="row g-4">
+
+<div class="col-md-4">
+<div class="card service-card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQndITqO_5njWdvJrhJ3k_JrlDmxvMJypZ2vPIgH1qYGA&s">
+<div class="card-body">
+<h5>Bathroom Installation</h5>
+<p>Washbasins, showers, bathtubs and modern bathroom fittings.</p>
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card service-card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLYCjIG4LP3QUp2PNgnBfxsDVuuYm8V6EJpp6s0v-WVw&s=10">
+<div class="card-body">
+<h5>Water Pipe Repair</h5>
+<p>Pipe replacement, leakage detection and pipeline maintenance.</p>
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card service-card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2_0GrUmHGJduOpl3Sxq96bNI0q4jXE5N8CL1wZzSCoQ&s">
+<div class="card-body">
+<h5>Kitchen Plumbing</h5>
+<p>Sink installation, tap replacement and drainage solutions.</p>
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card service-card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqd0lR1IH7XWTUVur81dGxNvueRhCcz5S7UmUeIPoiAg&s">
+<div class="card-body">
+<h5>Water Heater Installation</h5>
+<p>Water heater fitting and plumbing connections.</p>
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card service-card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREqQiVoAH45FtLDJOkmW_wtl_O0EAxnoThGaB-pT7k7g&s=10">
+<div class="card-body">
+<h5>Drain Cleaning</h5>
+<p>Drainage cleaning and blockage removal services.</p>
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card service-card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCr9VTGifVRuBp_B9SsqbSjt2y94ckeIm1f-0FB6QXdw&s=10">
+<div class="card-body">
+<h5>Water Tank Services</h5>
+<p>Water tank connections, fittings and maintenance.</p>
+</div>
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="section bg-light">
+<div class="section-title">
+<h2>Our Work <span>Process</span></h2>
+</div>
+<div class="row g-4 text-center">
+<div class="col-md-3"><div class="feature-box"><h1>01</h1><h5>Consultation</h5><p>Understand your plumbing needs.</p></div></div>
+<div class="col-md-3"><div class="feature-box"><h1>02</h1><h5>Inspection</h5><p>Check the plumbing system.</p></div></div>
+<div class="col-md-3"><div class="feature-box"><h1>03</h1><h5>Installation</h5><p>Complete professional work.</p></div></div>
+<div class="col-md-3"><div class="feature-box"><h1>04</h1><h5>Final Check</h5><p>Inspect and test the work.</p></div></div>
+</div>
+</section>
+
+</div>
+
+<!-- GALLERY PAGE -->
+<div id="gallery" class="page">
+
+<div class="page-banner">
+<h1>Our Project Gallery</h1>
+<p>Explore our plumbing work and installations</p>
+</div>
+
+<section class="section">
+<div class="section-title">
+<h2>Our Recent <span>Projects</span></h2>
+</div>
+
+<div class="row g-4">
+
+<div class="col-md-4" data-aos="zoom-in">
+<img class="gallery-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKivq5SkVmm0CDNfcb4J7VmJFdDGvFQEkKjIO8zB_dYA&s=10">
+<h5 class="mt-3">Modern Bathroom</h5>
+</div>
+
+<div class="col-md-4" data-aos="zoom-in">
+<img class="round-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQ4Kvta_SlrTfJ7Wn0b37I0uHvdKT3pT2Xb8etaG3fPw&s=10">
+<h5 class="mt-3 text-center">Kitchen Fittings</h5>
+</div>
+
+<div class="col-md-4" data-aos="zoom-in">
+<img class="oval-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQS8t9J_7LA4GB4ADxH8wywjoNOkKUK7SYg2yfjLNbClg&s=10">
+<h5 class="mt-3">Plumbing Equipment</h5>
+</div>
+
+<div class="col-md-4" data-aos="zoom-in">
+<img class="round-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa6b9UA3I3QsAK9SybssmspYaiJ7XcYLI5Na5pancq7g&s">
+<h5 class="mt-3 text-center">Professional Work</h5>
+</div>
+
+<div class="col-md-4" data-aos="zoom-in">
+<img class="gallery-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJnyi6yDWljiXcO_vx-0odvfRdPMct73ajEnVpg1yvrQ&s=10">
+<h5 class="mt-3">Home Improvements</h5>
+</div>
+
+<div class="col-md-4" data-aos="zoom-in">
+<img class="oval-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrB02L0Zqcqo0KP6MX_b_pcA9gMWpXfl-O8uTJv8lseQ&s=10">
+<h5 class="mt-3">Modern Interiors</h5>
+</div>
+
+</div>
+</section>
+</div>
+
+<!-- design PAGE -->
+<div id="media" class="page">
+
+<div class="page-banner">
+<h1>Display & Videos</h1>
+<p>Explore plumbing knowledge and demonstrations</p>
+</div>
+
+<section class="section">
+
+<div class="section-title">
+<h2>Plumbing <span>Video Gallery</span></h2>
+<p>Educational videos and plumbing demonstrations</p>
+</div>
+
+<div class="row g-4">
+
+<div class="col-md-6">
+<div class="video-box">
+<iframe src="https://www.youtube-nocookie.com/embed/aqsX8Z5jK5Q" title="Plumbing video" allowfullscreen></iframe>
+</div>
+<h5 class="mt-3">Plumbing Demonstration</h5>
+</div>
+
+<div class="col-md-6">
+<div class="video-box">
+<iframe src="https://www.youtube-nocookie.com/embed/ScMzIvxBSi4" title="Educational video" allowfullscreen></iframe>
+</div>
+<h5 class="mt-3">Plumbing Learning</h5>
+</div>
+
+</div>
+
+</section>
+
+<section class="section bg-light">
+<div class="section-title">
+<h2>Plumbing <span>Equipment</span></h2>
+</div>
+
+<div class="row g-4">
+<div class="col-md-4">
+<img class="gallery-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRX_vT4OkfYcNgH6WT3DYVoyzxrzXCKyCXY_M9git_tQg&s=10">
+<h5 class="mt-3">Professional Tools</h5>
+</div>
+<div class="col-md-4">
+<img class="round-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQC9q254Z502QaITODrQ9i0-8Wwf9kg1X_qMqi9qpeiLg&s=10">
+<h5 class="mt-3 text-center">Repair Equipment</h5>
+</div>
+<div class="col-md-4">
+<img class="oval-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZUjHHapYFSbmZl6FVknxD1zPSJPB15HurKpg2hI0XxQ&s=10">
+<h5 class="mt-3">Workshop Materials</h5>
+</div>
+</div>
+</section>
+
+</div>
+
+<!-- PRICING PAGE -->
+<div id="pricing" class="page">
+
+<div class="page-banner">
+<h1>Service Pricing</h1>
+<p>Affordable and transparent plumbing prices</p>
+</div>
+
+<section class="section">
+
+<div class="section-title">
+<h2>Our Service <span>Price List</span></h2>
+<p>Sample starting prices in Indian Rupees</p>
+</div>
+
+<div class="table-responsive price-table">
+<table class="table table-striped table-hover mb-0">
+<thead>
+<tr>
+<th>S.No</th>
+<th>Service Name</th>
+<th>Description</th>
+<th>Starting Price</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>01</td><td>Tap Repair</td><td>Tap leakage repair</td><td class="price">₹250</td></tr>
+<tr><td>02</td><td>Pipe Repair</td><td>Small pipe repairs</td><td class="price">₹450</td></tr>
+<tr><td>03</td><td>Drain Cleaning</td><td>Drain blockage removal</td><td class="price">₹500</td></tr>
+<tr><td>04</td><td>Bathroom Fitting</td><td>Bathroom fixture installation</td><td class="price">₹1,200</td></tr>
+<tr><td>05</td><td>Kitchen Sink</td><td>Sink installation</td><td class="price">₹900</td></tr>
+<tr><td>06</td><td>Water Heater</td><td>Heater installation</td><td class="price">₹1,000</td></tr>
+<tr><td>07</td><td>Water Tank</td><td>Tank connection work</td><td class="price">₹800</td></tr>
+</tbody>
+</table>
+</div>
+
+<p class="text-muted mt-3">*Prices are illustrative starting estimates. Actual costs depend on materials, labour and site inspection.</p>
+
+</section>
+
+<section class="section bg-light">
+<div class="section-title">
+<h2>Materials We <span>Use</span></h2>
+</div>
+
+<div class="table-responsive">
+<table class="table table-bordered table-hover bg-white">
+<thead class="table-dark">
+<tr><th>Material</th><th>Purpose</th><th>Quality</th></tr>
+</thead>
+<tbody>
+<tr><td>PVC Pipes</td><td>Water drainage</td><td>Standard / Premium</td></tr>
+<tr><td>CPVC Pipes</td><td>Hot and cold water</td><td>Premium</td></tr>
+<tr><td>Brass Taps</td><td>Water control</td><td>Premium</td></tr>
+<tr><td>Pipe Fittings</td><td>Pipe connections</td><td>Durable</td></tr>
+<tr><td>Water Valves</td><td>Water flow control</td><td>Quality grade</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+</div>
+
+<!-- CONTACT PAGE -->
+<div id="contact" class="page">
+
+<div class="page-banner">
+<h1>Contact AquaFix</h1>
+<p>Let's solve your plumbing problems</p>
+</div>
+
+<section class="section">
+<div class="row g-5">
+
+<div class="col-md-5">
+<h2 class="fw-bold">Get In <span style="color:#ff8c42">Touch</span></h2>
+<p>Contact our team for plumbing enquiries and service requests.</p>
+
+<div class="feature-box mb-3">
+<h5>📍 Our Location</h5>
+<p>Update with your business address</p>
+</div>
+
+<div class="feature-box mb-3">
+<h5>✉️ Email</h5>
+<p>info@aquafix.com</p>
+</div>
+
+<div class="feature-box">
+<h5>🕒 Working Hours</h5>
+<p>Monday - Saturday</p>
+<p>9:00 AM - 7:00 PM</p>
+</div>
+
+</div>
+
+<div class="col-md-7">
+<div class="contact-box">
+<h3 class="fw-bold mb-4">Send An Enquiry</h3>
+
+<form onsubmit="sendEnquiry(event)">
+<input class="form-control" id="name" type="text" placeholder="Your Name" required>
+
+<input class="form-control" id="email" type="email" placeholder="Your Email" required>
+
+<select class="form-select" id="service" required>
+<option value="">Select Service</option>
+<option>Bathroom Plumbing</option>
+<option>Kitchen Plumbing</option>
+<option>Pipe Repair</option>
+<option>Drain Cleaning</option>
+<option>Water Heater Installation</option>
+<option>Other</option>
+</select>
+
+<textarea class="form-control" id="message" rows="5" placeholder="Describe your plumbing requirement" required></textarea>
+
+<button class="btn-main w-100" type="submit">Submit Enquiry →</button>
+</form>
+
+<p id="form-result" class="mt-3 text-success"></p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- MAP -->
+<section class="section bg-light">
+<div class="section-title">
+<h2>Find Our <span>Location</span></h2>
+<p>Visit us using the map below</p>
+</div>
+
+<div class="map-container">
+<iframe
+src="https://maps.google.com/maps?q=Bengaluru%2C%20India&t=&z=11&ie=UTF8&iwloc=&output=embed"
+loading="lazy"
+allowfullscreen>
+</iframe>
+</div>
+<p class="text-center mt-3 text-muted">Sample map location – replace Bengaluru with your actual business address.</p>
+</section>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+
+<div class="row g-4">
+
+<div class="col-md-4">
+<h4>🔧 AquaFix Plumbing</h4>
+<p>Your trusted partner for professional plumbing, water pipe installations, bathroom fittings and maintenance.</p>
+</div>
+
+<div class="col-md-2">
+<h5>Quick Links</h5>
+<a onclick="showPage('home')">Home</a>
+<a onclick="showPage('about')">About Us</a>
+<a onclick="showPage('services')">Services</a>
+<a onclick="showPage('gallery')">Gallery</a>
+</div>
+
+<div class="col-md-3">
+<h5>Our Services</h5>
+<a onclick="showPage('services')">Bathroom Plumbing</a>
+<a onclick="showPage('services')">Kitchen Plumbing</a>
+<a onclick="showPage('services')">Pipe Installation</a>
+<a onclick="showPage('services')">Drain Cleaning</a>
+</div>
+
+<div class="col-md-3">
+<h5>More Information</h5>
+<a onclick="showPage('media')">Multimedia</a>
+<a onclick="showPage('pricing')">Pricing</a>
+<a onclick="showPage('contact')">Contact Us</a>
+<p>✉ info@aquafix.com</p>
+</div>
+
+</div>
+
+<div class="footer-bottom">
+<p>© 2026 AquaFix Plumbing Services. All Rights Reserved.</p>
+<p>Designed with 💙 for Better Plumbing Solutions</p>
+</div>
+
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+AOS.init({
+    duration:1000,
+    once:true
+});
+
+// Separate page navigation
+function showPage(pageId, clickedLink) {
+
+    document.querySelectorAll('.page').forEach(page => {
+        page.classList.remove('active');
+    });
+
+    document.getElementById(pageId).classList.add('active');
+
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.classList.remove('active');
+    });
+
+    if(clickedLink) {
+        clickedLink.classList.add('active');
+    } else {
+        document.querySelectorAll('.nav-link').forEach(link => {
+            if(link.getAttribute('onclick')?.includes("'" + pageId + "'")) {
+                link.classList.add('active');
+            }
+        });
+    }
+
+    // Close mobile menu after navigation
+    const menu = document.getElementById('menu');
+    const bsCollapse = bootstrap.Collapse.getInstance(menu);
+
+    if(bsCollapse) {
+        bsCollapse.hide();
+    }
+
+    window.scrollTo({
+        top:0,
+        behavior:'smooth'
+    });
+
+    AOS.refreshHard();
+}
+
+// Demo enquiry form
+function sendEnquiry(event) {
+    event.preventDefault();
+
+    const name = document.getElementById('name').value;
+
+    document.getElementById('form-result').innerText =
+        "Thank you " + name + "! Your enquiry has been recorded in this demo.";
+
+    event.target.reset();
+}
+</script>
+
+</body>
+</html>
